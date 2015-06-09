@@ -31,7 +31,7 @@ doxie
 
 
 
-<p><a
+<p align="center"><a
   title="Graphic by the great Justin Mezzell"
   href="http://justinmezzell.tumblr.com/post/89652317743"
   >
