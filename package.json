@@ -1,6 +1,6 @@
-{ "name": "…"
+{ "name": "doxie"
 , "version": "0.0.0-work-in-progress"
-, "description": "…"
+, "description": "The simplest doc generator you’ve seen."
 
 , "dependencies":
   {}
@@ -28,7 +28,19 @@
 
 , "license": "MIT"
 , "keywords":
-  [ "…"
+  [ "jsdoc"
+  , "markdown"
+  , "documentation"
+  , "dox"
+  , "readme"
+  , "markdox-alternative"
+  , "doxme-alternative"
+  , "docco-alternative"
+  , "docs"
+  , "doc"
+  , "api"
+  , "template"
+  , "generator"
   ]
 , "author": "Studio B12 GmbH  (http://www.studio-b12.de/)"
 , "contributors":
@@ -36,6 +48,6 @@
   ]
 , "repository":
   { "type": "git"
-  , "url": "git@github.com:studio-b12/….git"
+  , "url": "git@github.com:studio-b12/doxie.git"
   }
 }
