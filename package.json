@@ -15,9 +15,13 @@
   }
 
 , "devDependencies":
-  { "?": "Run `npm install coveralls istanbul jshint nodangel tap-spec@2` and save it here"
+  { "tap-spec": "2.2.2"
+  , "coveralls": "2.11.2"
+  , "jshint": "2.8.0"
+  , "istanbul": "0.3.14"
+  , "nodangel": "1.3.8"
 
-  , "?": "Run `npm install tape-catch` and save it here"
+  , "tape-catch": "1.0.4"
   }
 
 , "files":
