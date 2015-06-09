@@ -31,6 +31,24 @@ doxie
 
 
 
+<p><a
+  title="Graphic by the great Justin Mezzell"
+  href="http://justinmezzell.tumblr.com/post/89652317743"
+  >
+  <br/>
+  <br/>
+  <img
+    src="Readme/Compass.gif"
+    width="400"
+    height="300"
+  />
+  <br/>
+  <br/>
+</a></p>
+
+
+
+
 Installation
 ------------
 
