@@ -23,7 +23,6 @@ doxie
 **The simplest doc generator you’ve seen.**
 
 
-
 **⚠ Heads up!** This is totally a work in progress. [Thoughts and ideas][] are very welcome.
 
 [Thoughts and ideas]:  https://github.com/studio-b12/doxie/issues
@@ -52,9 +51,30 @@ doxie
 Installation
 ------------
 
+*doxie* is a command-line tool.
+
 ```sh
-$ npm install doxie
+$ npm install --global doxie
 ```
+
+
+*doxie* itself is just a slim core. Every feature is a plugin. So if you want to run `doxie --filter --output`, make sure you install *[doxie.filter][]* and *[doxie.output][]* first:
+
+```sh
+$ npm install --global doxie.filter doxie.output
+```
+
+
+Speaking of plugins, most of them are compatible with *[dox][]*
+
+```sh
+$ npm install --global dox
+```
+
+
+[doxie.filter]:  http://npm.im/doxie.filter
+[doxie.output]:  http://npm.im/doxie.output
+[dox]:           http://npm.im/dox
 
 
 
