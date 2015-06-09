@@ -1,0 +1,18 @@
+#
+# Files ignored by Git
+# ====================
+#
+
+# - All files and directories starting with "#"
+\#*
+
+# - NPM stuff
+/node_modules/
+/npm-debug.log
+
+# - Test coverage reports
+/coverage/
+
+# - Editor files
+*.sublime-project
+*.sublime-workspace

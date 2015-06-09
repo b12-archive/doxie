@@ -1,0 +1,13 @@
+#
+# Files ignored by jsHint
+# =======================
+#
+
+# - All files and directories starting with "#"
+\#*
+
+# - Automatically installed dependencies
+/node_modules/
+
+# - Test coverage reports
+/coverage/

@@ -1,0 +1,41 @@
+{ "name": "…"
+, "version": "0.0.0-work-in-progress"
+, "description": "…"
+
+, "dependencies":
+  {}
+
+, "scripts":
+  { "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+  , "coverage": "istanbul cover test.js"
+  , "develop": "nodangel --ignore node_modules --ignore coverage --exec 'npm run --silent test:lite'"
+  , "test": "jshint . && npm run test:lite"
+  , "test:lite": "node test.js | tap-spec"
+  , "view-coverage": "echo 'Generating coverage reports...'; npm run coverage >/dev/null && echo '...done.' && xdg-open ./coverage/lcov-report/index.html >/dev/null"
+  }
+
+, "devDependencies":
+  { "?": "Run `npm install coveralls istanbul jshint nodangel tap-spec@2` and save it here"
+
+  , "?": "Run `npm install tape-catch` and save it here"
+  }
+
+, "files":
+  [ "**/*.js"
+  , "/Readme.md"
+  , "/License.md"
+  ]
+
+, "license": "MIT"
+, "keywords":
+  [ "…"
+  ]
+, "author": "Studio B12 GmbH  (http://www.studio-b12.de/)"
+, "contributors":
+  [ "Tomek Wiszniewski  <t.wiszniewski@gmail.com>"
+  ]
+, "repository":
+  { "type": "git"
+  , "url": "git@github.com:studio-b12/….git"
+  }
+}
