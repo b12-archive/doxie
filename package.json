@@ -1,5 +1,5 @@
 { "name": "doxie"
-, "version": "0.0.0-work-in-progress"
+, "version": "0.1.0"
 , "description": "The simplest doc generator you’ve seen."
 
 , "dependencies":
