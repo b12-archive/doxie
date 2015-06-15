@@ -4,6 +4,7 @@
 
 , "dependencies":
   { "1-liners": "^0.3.0"
+  , "chalk": "^1.0.0"
   , "doxie-core": "^0.2.1"
   , "tiny-error": "^0.2.1"
   }

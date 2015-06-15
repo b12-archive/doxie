@@ -1,13 +1,15 @@
 #! /usr/bin/env node
 
 var doxie = require('doxie-core');
-var tinyError = require('tiny-error');
+var tinyError = require('tiny-error')({
+  prefix: require('chalk').cyan('[doxie]') + ' ',
+});
 var implode = require('1-liners/implode');
 
 var args = process.argv.slice(2);
 var pluginName = /^--(.+)$/;
 
-var plugins = args.reduce(function(plugins, argument) {
+var plugins = args.reduce(function(plugins, argument, index) {
   var parsedPluginName = pluginName.exec(argument);
   var indexOfLastPlugin = plugins.length;
 
@@ -22,8 +24,10 @@ var plugins = args.reduce(function(plugins, argument) {
     return plugins;
   }
 
-  throw tinyError('Unrecognized argument: ' + argument);
-    // TODO: Be more helpful
+  throw tinyError('Unrecognized argument: ' +
+    '“' + argument + '” ' +
+    '(position ' + (index + 1) + ').'
+  );
 }, []);
 
 doxie(plugins.map(function(plugin) {
