@@ -3,7 +3,10 @@
 , "description": "The simplest doc generator you’ve seen."
 
 , "dependencies":
-  {}
+  { "1-liners": "^0.3.0"
+  , "doxie-core": "^0.2.1"
+  , "tiny-error": "^0.2.1"
+  }
 
 , "scripts":
   { "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
@@ -24,6 +27,10 @@
   , "tape-catch": "1.0.4"
   }
 
+, "bin":
+  { "doxie": "bin/doxie.js"
+  }
+, "preferGlobal": true
 , "files":
   [ "**/*.js"
   , "/Readme.md"
