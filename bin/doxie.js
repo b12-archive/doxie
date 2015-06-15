@@ -1,12 +1,22 @@
 #! /usr/bin/env node
 
+var args = process.argv.slice(2);
+
+if (!args.length || args[0] === '-h') return console.log(
+  require('./help/usage')
+); else if (args[0] === '--help') return console.log('\n' + [
+  require('./help/synopsis'),
+  require('./help/description'),
+  require('./help/examples'),
+  require('./help/popularPlugins'),
+].join('\n\n\n'));
+
 var doxie = require('doxie-core');
 var tinyError = require('tiny-error')({
   prefix: require('chalk').cyan('[doxie]') + ' ',
 });
 var implode = require('1-liners/implode');
 
-var args = process.argv.slice(2);
 var pluginName = /^--(.+)$/;
 
 var plugins = args.reduce(function(plugins, argument, index) {
