@@ -23,11 +23,6 @@ doxie
 **The simplest doc generator you’ve seen.**
 
 
-**⚠ Heads up!** This is totally a work in progress. [Thoughts and ideas][] are very welcome.
-
-[Thoughts and ideas]:  https://github.com/studio-b12/doxie/issues
-
-
 
 
 <p align="center"><a
@@ -82,7 +77,59 @@ $ npm install --global dox
 Usage
 -----
 
-…
+SYNOPSIS
+
+    Usage: doxie [--help|-h]
+       or: doxie (--<plugin> [<plugin options>])+
+
+
+DESCRIPTION
+
+    http://npm.im/doxie
+    The simplest docs generator you’ve seen
+
+    All it does is take an array of data and pipe it through a bunch of plugins (functions). Just keep in mind that many plugins will expect data compatible with <http://npm.im/dox>. That’s it.
+
+    doxie operates over stdio.
+
+
+EXAMPLES
+
+    High level:
+        $ dox < myLibrary.js | doxie  \
+        $   --drop @private           \
+        $   --drop @protected         \
+        $   --sort by @module         \
+        $   --preset 1-liners         \
+        $   --inject into Readme.md
+
+    Low level:
+        $ doxie                                                      \
+        $   --filter build/filter.js                                 \
+        $   --render build/template.js                               \
+        $   --output                                                 \
+        $   < data.json                                              \
+        $   | cat build/Readme.overview.md - build/Readme.footer.md  \
+        $   > Readme.md
+
+    Note that not all of the above plugins are available at the time of writing.
+
+
+POPULAR PLUGINS
+
+    --filter [<filter function (default: .doxie.filter.js)>]
+        Filter comments through a custom function.
+        <http://npm.im/doxie.filter>
+
+    --render [<template function (default: .doxie.render.js)>]
+        Render comments with a simple, flexible function.
+        <http://npm.im/doxie.render>
+
+    --output
+        Output rendered comments.
+        <http://npm.im/doxie.output>
+
+    For an up-to-date list of available plugins visit <https://www.npmjs.com/browse/keyword/doxie-plugin>.
 
 
 
