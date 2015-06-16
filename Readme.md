@@ -77,45 +77,45 @@ $ npm install --global dox
 Usage
 -----
 
-SYNOPSIS
+**SYNOPSIS**
 
     Usage: doxie [--help|-h]
        or: doxie (--<plugin> [<plugin options>])+
 
 
-DESCRIPTION
+**DESCRIPTION**
 
-    http://npm.im/doxie
-    The simplest docs generator you’ve seen
+http://npm.im/doxie
+The simplest docs generator you’ve seen
 
-    All it does is take an array of data and pipe it through a bunch of plugins (functions). Just keep in mind that many plugins will expect data compatible with <http://npm.im/dox>. That’s it.
+All it does is take an array of data and pipe it through a bunch of plugins (functions). Just keep in mind that many plugins will expect data compatible with <http://npm.im/dox>. That’s it.
 
-    doxie operates over stdio.
-
-
-EXAMPLES
-
-    High level:
-        $ dox < myLibrary.js | doxie  \
-        $   --drop @private           \
-        $   --drop @protected         \
-        $   --sort by @module         \
-        $   --preset 1-liners         \
-        $   --inject into Readme.md
-
-    Low level:
-        $ doxie                                                      \
-        $   --filter build/filter.js                                 \
-        $   --render build/template.js                               \
-        $   --output                                                 \
-        $   < data.json                                              \
-        $   | cat build/Readme.overview.md - build/Readme.footer.md  \
-        $   > Readme.md
-
-    Note that not all of the above plugins are available at the time of writing.
+doxie operates over stdio.
 
 
-POPULAR PLUGINS
+**EXAMPLES**
+
+High level:
+    $ dox < myLibrary.js | doxie  \
+    $   --drop @private           \
+    $   --drop @protected         \
+    $   --sort by @module         \
+    $   --preset 1-liners         \
+    $   --inject into Readme.md
+
+Low level:
+    $ doxie                                                      \
+    $   --filter build/filter.js                                 \
+    $   --render build/template.js                               \
+    $   --output                                                 \
+    $   < data.json                                              \
+    $   | cat build/Readme.overview.md - build/Readme.footer.md  \
+    $   > Readme.md
+
+Note that not all of the above plugins are available at the time of writing.
+
+
+**POPULAR PLUGINS**
 
     --filter [<filter function (default: .doxie.filter.js)>]
         Filter comments through a custom function.
@@ -129,7 +129,7 @@ POPULAR PLUGINS
         Output rendered comments.
         <http://npm.im/doxie.output>
 
-    For an up-to-date list of available plugins visit <https://www.npmjs.com/browse/keyword/doxie-plugin>.
+For an up-to-date list of available plugins visit <https://www.npmjs.com/browse/keyword/doxie-plugin>.
 
 
 
