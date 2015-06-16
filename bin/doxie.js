@@ -57,7 +57,13 @@ toJson(process.stdin, function (error, data) {
     'Invalid JSON input: “' + error.message + '”.\n'
   );
 
-  doxie(plugins.map(function(plugin) {
-    return implode(plugin.maker)(plugin.args);
-  }))(data);
+  doxie(
+    plugins.map(function(plugin) {
+      return implode(plugin.maker)(plugin.args);
+    }),
+    {
+      stdout: process.stdout,
+      stderr: process.stderr,
+    }
+  )(data);
 });
