@@ -14,10 +14,12 @@ if (!args.length || args[0] === '-h') return console.log(
 
 // Imports
 var doxie = require('doxie-core');
+var toJson = require('stream-to-json');
+var implode = require('1-liners/implode');
+
 var tinyError = require('tiny-error')({
   prefix: require('chalk').cyan('[doxie]') + ' ',
 });
-var implode = require('1-liners/implode');
 
 // Argument parsing
 var pluginName = /^--(.+)$/;
@@ -44,6 +46,8 @@ var plugins = args.reduce(function(plugins, argument, index) {
 }, []);
 
 // The logic
-doxie(plugins.map(function(plugin) {
-  return implode(plugin.maker)(plugin.args);
-}));
+toJson(process.stdin, function (error, data) {
+  doxie(plugins.map(function(plugin) {
+    return implode(plugin.maker)(plugin.args);
+  }))(data);
+});
