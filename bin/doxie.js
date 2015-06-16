@@ -2,6 +2,7 @@
 
 var args = process.argv.slice(2);
 
+// Usage info
 if (!args.length || args[0] === '-h') return console.log(
   require('./help/usage')
 ); else if (args[0] === '--help') return console.log('\n' + [
@@ -11,12 +12,14 @@ if (!args.length || args[0] === '-h') return console.log(
   require('./help/popularPlugins'),
 ].join('\n\n\n'));
 
+// Imports
 var doxie = require('doxie-core');
 var tinyError = require('tiny-error')({
   prefix: require('chalk').cyan('[doxie]') + ' ',
 });
 var implode = require('1-liners/implode');
 
+// Argument parsing
 var pluginName = /^--(.+)$/;
 
 var plugins = args.reduce(function(plugins, argument, index) {
@@ -40,6 +43,7 @@ var plugins = args.reduce(function(plugins, argument, index) {
   );
 }, []);
 
+// The logic
 doxie(plugins.map(function(plugin) {
   return implode(plugin.maker)(plugin.args);
 }));
