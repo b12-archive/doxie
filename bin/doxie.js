@@ -17,9 +17,15 @@ var doxie = require('doxie-core');
 var toJson = require('stream-to-json');
 var implode = require('1-liners/implode');
 
+var messagePrefix = require('chalk').cyan('[doxie]') + ' ';
 var tinyError = require('tiny-error')({
-  prefix: require('chalk').cyan('[doxie]') + ' ',
+  prefix: messagePrefix,
 });
+
+function fail (content) {
+  process.stderr.write(messagePrefix + content + '\n');
+  process.exit(1);
+};
 
 // Argument parsing
 var pluginName = /^--(.+)$/;
@@ -47,6 +53,10 @@ var plugins = args.reduce(function(plugins, argument, index) {
 
 // The logic
 toJson(process.stdin, function (error, data) {
+  if (error) fail(
+    'Invalid JSON input: “' + error.message + '”.\n'
+  );
+
   doxie(plugins.map(function(plugin) {
     return implode(plugin.maker)(plugin.args);
   }))(data);
