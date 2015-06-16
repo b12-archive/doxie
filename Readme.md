@@ -96,6 +96,7 @@ doxie operates over stdio.
 **EXAMPLES**
 
 High level:
+
     $ dox < myLibrary.js | doxie  \
     $   --drop @private           \
     $   --drop @protected         \
@@ -104,6 +105,7 @@ High level:
     $   --inject into Readme.md
 
 Low level:
+
     $ doxie                                                      \
     $   --filter build/filter.js                                 \
     $   --render build/template.js                               \
