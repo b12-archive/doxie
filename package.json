@@ -16,9 +16,9 @@
   , "coverage": "rm -rf coverage && npm run test:transpile && cd .es5 && istanbul cover test.js && mv coverage .."
   , "develop": "nodangel --ignore node_modules --ignore coverage --exec 'npm run --silent test:lite'"
   , "prepublish": "npm run --silent clean && npm run transpile"
-  , "test": "jshint . && npm run test:transpile && node .es5/test.js | tap-spec"
-  , "test:transpile": "rm -rf .es5 && babel test.js test/*.js module/*.js module/*/*.js module/*/*/*.js --out-dir .es5"
-  , "test:lite": "babel-node test.js | tap-spec"
+  , "test": "jshint . && npm run test:lite"
+  , "test:transpile": "rm -rf .es5 && babel test.js test/*.js test/*/*.js module/*.js module/*/*.js module/*/*/*.js --out-dir .es5"
+  , "test:lite": "npm run test:transpile && node .es5/test.js | tap-spec"
   , "transpile": "cd module && babel --out-dir ../ *.js */*.js */*/*.js"
   , "view-coverage": "echo 'Generating coverage reports...'; npm run coverage >/dev/null && echo '...done.' && xdg-open ./coverage/lcov-report/index.html >/dev/null"
   }
