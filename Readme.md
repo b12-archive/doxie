@@ -1,7 +1,7 @@
 [![Join the chat at https://gitter.im/studio-b12/doxie
 ](https://img.shields.io/badge/GITTER-JOIN%20CHAT%20%E2%86%92-1dce73.svg?style=flat-square)
 ](https://gitter.im/studio-b12/doxie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
- [![Coveralls – test coverage
+ [![Coveralls – test coverage
 ](https://img.shields.io/coveralls/studio-b12/doxie.svg?style=flat-square)
 ](https://coveralls.io/r/studio-b12/doxie)
  [![Travis – build status
