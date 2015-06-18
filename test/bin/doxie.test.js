@@ -2,51 +2,46 @@ const tape = require('tape-catch');
 const {spawn} = require('nexpect');
 const {resolve} = require('path');
 const {test, plus, curry, property, map, shave} = require('1-liners');
+const {execFile} = require('child_process');
 
 const kill = shave(1, process.kill);
 const title = curry(plus)('The CLI program:  ');
-const doxie = resolve(__dirname, '../../module/bin/doxie.js');
+const doxie = curry(execFile)(
+  resolve(__dirname, '../../module/bin/doxie.js')
+);
 
 tape(title('Prints usage'), (is) => {
   is.plan(6);
 
-  spawn(
-    `${doxie}`, {stream: 'stderr'}
-  ).run((error, output, exit) => {
-    if (error) throw error;
-
-    is.equal(exit, 1,
+  doxie([], (error, _, stderr) => {
+    is.equal(error && error.code, 1,
       '`doxie` fails…'
     );
 
     is.ok(
-      test(output.join('\n'), /^usage:/i),
-      '…and prints usage'
+      test(stderr, /^usage:/i),
+      '…and prints usage to stderr'
     );
   });
 
-  spawn(
-    `${doxie} -h`
-  ).run((error, output, exit) => {if (error) throw error;
-    is.equal(exit, 0,
+  doxie(['-h'], (error, stdout) => {
+    is.equal(error, null,
       '`doxie -h` succeeds…'
     );
 
     is.ok(
-      test(output.join('\n'), /^usage/i),
+      test(stdout, /^usage/i),
       '…and prints usage'
     );
   });
 
-  spawn(
-    `${doxie} --help`
-  ).run((error, output, exit) => {if (error) throw error;
-    is.equal(exit, 0,
+  doxie(['--help'], (error, stdout) => {
+    is.equal(error, null,
       '`doxie --help` succeeds…'
     );
 
     is.ok(
-      test(output.join('\n'), /SYNOPSIS/),
+      test(stdout, /SYNOPSIS/),
       '…and prints manpage-like help'
     );
   });
