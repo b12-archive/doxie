@@ -44,16 +44,18 @@ const pluginName = /^--(.+)$/;
 
 const plugins = args.reduce((plugins, argument, index) => {
   const parsedPluginName = pluginName.exec(argument);
-  const indexOfLastPlugin = plugins.length;
+  const pluginsCount = plugins.length;
 
+  // Add a new plugin.
   if (parsedPluginName) return plugins.concat({
     maker: require('doxie.' + parsedPluginName[1] + '/cli-plugin'),
       // TODO: Check if `maker` is a function
     args: [],
   });
 
-  else if (indexOfLastPlugin) {
-    plugins[indexOfLastPlugin].args.push(argument);
+  // Add arguments to the last plugin.
+  if (pluginsCount) {
+    plugins[pluginsCount - 1].args.push(argument);
     return plugins;
   }
 
