@@ -72,4 +72,6 @@ toJson(stdin, function (error, data) {
     plugins.map(({maker, args}) => implode(maker)(args)),
     {stdout, stderr}
   )(data);
+
+  process.exit(0);
 });
