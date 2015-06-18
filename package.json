@@ -5,7 +5,7 @@
 , "dependencies":
   { "1-liners": "1-liners/1-liners#2558b3c"
   , "chalk": "^1.0.0"
-  , "doxie-core": "^0.2.2"
+  , "doxie-core": "^0.2.3"
   , "stream-to-json": "^0.0.1"
   , "tiny-error": "^0.2.1"
   }
