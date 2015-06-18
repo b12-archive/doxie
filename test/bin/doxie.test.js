@@ -102,3 +102,60 @@ tape(title(
   process.stdin.destroy();
   process.end();
 });
+
+tape(title(
+  '`doxie --render <path> --output` works as expected'
+), (is) => {
+  is.plan(2);
+
+  const renderPath = resolve(__dirname, '../mock-cwd/.render.doxie.js');
+  const process = spawn(is,
+    `${doxie} --render ${renderPath} --output`
+  );
+  process.timeout(500);
+
+  process.succeeds(
+    'exiting successfully'
+  );
+
+  process.stdout.match(
+`#  one  #
+
+## Parameters
+
+* \`{Array} stuff\` – exiting things
+* \`{Object} things\` – exiting stuff
+
+
+#  two  #
+
+## Parameters
+
+(none)
+
+
+`   ,
+    'producing pretty output'
+  );
+
+  process.stdin.write(`
+[ { "title": "one"
+  , "parameters":
+    [ { "name": "stuff"
+      , "type": "Array"
+      , "description": "exciting things"
+      }
+    , { "name": "things"
+      , "type": "Object"
+      , "description": "exciting stuff"
+      }
+    ]
+  }
+, { "title": "two"
+  , "parameters": []
+  }
+]
+`);
+  process.stdin.destroy();
+  process.end();
+});
