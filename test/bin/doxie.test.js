@@ -81,3 +81,24 @@ tape(title('`doxie --<plugin>` fails having received invalid JSON'), (is) => {
   process.stdin.destroy();
   process.end();
 });
+
+tape(title(
+  '`doxie --<plugin>` fails when it gets a non-array as input'
+), (is) => {
+  const process = spawn(is, `${doxie} --output`);
+  process.timeout(500);
+
+  process.exitCode(
+    1,
+    'exiting `1`'
+  );
+
+  process.stderr.match(
+    /\[doxie-core\]/i,
+    'with a message from doxie-core'
+  );
+
+  process.stdin.write('{"a": 1}');
+  process.stdin.destroy();
+  process.end();
+});
