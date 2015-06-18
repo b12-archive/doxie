@@ -1,6 +1,7 @@
 branches:
   only:
     - master
+    - travis-debug
 
 before_install:
   git config user.name "Travis CI"
