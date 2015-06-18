@@ -3,7 +3,7 @@
 , "description": "The simplest doc generator you’ve seen."
 
 , "dependencies":
-  { "1-liners": "1-liners/1-liners#f3edf2a"
+  { "1-liners": "1-liners/1-liners#2558b3c"
   , "chalk": "^1.0.0"
   , "doxie-core": "^0.2.2"
   , "stream-to-json": "^0.0.1"
