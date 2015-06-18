@@ -1,19 +1,17 @@
 const tape = require('tape-catch');
-const {spawn} = require('nexpect');
+const spawn = require('tape-spawn');
 const {resolve} = require('path');
-const {test, plus, curry, property, map, shave} = require('1-liners');
+const {test, plus, curry} = require('1-liners');
 const {execFile} = require('child_process');
 
-const kill = shave(1, process.kill);
 const title = curry(plus)('The CLI program:  ');
-const doxie = curry(execFile)(
-  resolve(__dirname, '../../module/bin/doxie.js')
-);
+const doxie = resolve(__dirname, '../../module/bin/doxie.js');
+const doxieCommand = curry(execFile)(doxie);
 
 tape(title('Prints usage'), (is) => {
   is.plan(6);
 
-  doxie([], (error, _, stderr) => {
+  doxieCommand([], (error, _, stderr) => {
     is.equal(error && error.code, 1,
       '`doxie` fails…'
     );
@@ -24,7 +22,7 @@ tape(title('Prints usage'), (is) => {
     );
   });
 
-  doxie(['-h'], (error, stdout) => {
+  doxieCommand(['-h'], (error, stdout) => {
     is.equal(error, null,
       '`doxie -h` succeeds…'
     );
@@ -35,7 +33,7 @@ tape(title('Prints usage'), (is) => {
     );
   });
 
-  doxie(['--help'], (error, stdout) => {
+  doxieCommand(['--help'], (error, stdout) => {
     is.equal(error, null,
       '`doxie --help` succeeds…'
     );
@@ -47,52 +45,39 @@ tape(title('Prints usage'), (is) => {
   });
 });
 
-tape(title('Fails gracefully'), (is) => {
-  is.plan(4);
+tape(title('Fails having received empty input'), (is) => {
+  const process = spawn(is, `${doxie} --output`);
+  process.timeout(500);
 
-  const pids = map(curry(property)('pid'), [
-    spawn(
-      `${doxie} --output`,
-      {stream: 'stderr'}
-    )
-      .sendEof()
-      .run((error, output, exit) => {if (error) throw error;
-        is.equal(exit, 1,
-          'piping empty input into `doxie --<plugin>` fails…'
-        );
+  process.exitCode(
+    1,
+    'exiting `1`'
+  );
 
-        is.ok(
-          test(output.join('\n'), /invalid json input/i),
-          '…and results in a helpful message'
-        );
-      })
-    ,
+  process.stderr.match(
+    /invalid json input/i,
+    'with a helpful message'
+  );
 
-    spawn(
-      `${doxie} --output`,
-      {stream: 'stderr'}
-    )
-      .sendline('not JSON')
-      .sendEof()
-      .run((error, output, exit) => {if (error) throw error;
-        is.equal(exit, 1,
-          'piping invalid JSON into `doxie --<plugin>` fails…'
-        );
+  process.stdin.destroy();
+  process.end();
+});
 
-        is.ok(
-          test(output.join('\n'), /invalid json input/i),
-          '…and results in a helpful message'
-        );
-      })
-    ,
-  ]);
+tape(title('Fails having received invalid JSON'), (is) => {
+  const process = spawn(is, `${doxie} --output`);
+  process.timeout(500);
 
-  // Kill any dangling processes.
-  setTimeout(() => {
-    try {
-      pids.forEach(kill);
-    } catch (error) {
-      if (error.code !== 'ESRCH') throw error;
-    }
-  }, 500);
+  process.exitCode(
+    1,
+    'exiting `1`'
+  );
+
+  process.stderr.match(
+    /invalid json input/i,
+    'with a helpful message'
+  );
+
+  process.stdin.write('a');
+  process.stdin.destroy();
+  process.end();
 });
