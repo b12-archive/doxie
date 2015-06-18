@@ -3,6 +3,13 @@
 # ====================
 #
 
+# - Built files
+/*.js
+!/module.js
+!/test.js
+/bin/
+/.es5/
+
 # - All files and directories starting with "#"
 \#*
 
