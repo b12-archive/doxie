@@ -108,10 +108,11 @@ tape(title(
 ), (is) => {
   is.plan(2);
 
-  const renderPath = resolve(__dirname, '../mock-cwd/.render.doxie.js');
-  const process = spawn(is,
-    `${doxie} --render ${renderPath} --output`
-  );
+  const process = spawn(is, [
+    'doxie',
+    `--render ${resolve(__dirname, '../mock-cwd/template.js')} `,
+    '--output',
+  ].join(' '));
   process.timeout(500);
 
   process.succeeds(
@@ -121,15 +122,15 @@ tape(title(
   process.stdout.match(
 `#  one  #
 
-## Parameters
+##  Parameters  ##
 
-* \`{Array} stuff\` – exiting things
-* \`{Object} things\` – exiting stuff
+* \`{Array} stuff\` – exciting things
+* \`{Object} things\` – exciting stuff
 
 
 #  two  #
 
-## Parameters
+##  Parameters  ##
 
 (none)
 
