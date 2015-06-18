@@ -1,10 +1,12 @@
-const test = require('tape-catch');
+const tape = require('tape-catch');
 const {spawn} = require('nexpect');
 const {resolve} = require('path');
+const {test, plus, curry} = require('1-liners');
 
+const title = curry(plus)('The CLI program:  ');
 const doxie = resolve(__dirname, '../../module/bin/doxie.js');
 
-test('The CLI program works', (is) => {
+tape(title('Prints usage'), (is) => {
   is.plan(6);
 
   spawn(
@@ -17,7 +19,7 @@ test('The CLI program works', (is) => {
     );
 
     is.ok(
-      /^usage:/i.test(output),
+      test(output, /^usage:/i),
       'and prints usage'
     );
   });
@@ -30,7 +32,7 @@ test('The CLI program works', (is) => {
     );
 
     is.ok(
-      /^usage/i.test(output),
+      test(output, /^usage/i),
       'and prints usage'
     );
   });
@@ -43,7 +45,7 @@ test('The CLI program works', (is) => {
     );
 
     is.ok(
-      /SYNOPSIS/.test(output),
+      test(output, /SYNOPSIS/),
       'and prints manpage-like help'
     );
   });
