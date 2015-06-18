@@ -50,8 +50,7 @@ tape(title('Fails having received empty input'), (is) => {
   process.timeout(500);
 
   process.exitCode(
-    1,
-    'exiting `1`'
+    1
   );
 
   process.stderr.match(
@@ -68,8 +67,7 @@ tape(title('Fails having received invalid JSON'), (is) => {
   process.timeout(500);
 
   process.exitCode(
-    1,
-    'exiting `1`'
+    1
   );
 
   process.stderr.match(
