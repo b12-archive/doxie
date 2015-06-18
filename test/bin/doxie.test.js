@@ -20,7 +20,7 @@ tape(title('Prints usage'), (is) => {
 
     is.ok(
       test(output.join('\n'), /^usage:/i),
-      'and prints usage'
+      '…and prints usage'
     );
   });
 
@@ -33,7 +33,7 @@ tape(title('Prints usage'), (is) => {
 
     is.ok(
       test(output.join('\n'), /^usage/i),
-      'and prints usage'
+      '…and prints usage'
     );
   });
 
@@ -46,7 +46,7 @@ tape(title('Prints usage'), (is) => {
 
     is.ok(
       test(output.join('\n'), /SYNOPSIS/),
-      'and prints manpage-like help'
+      '…and prints manpage-like help'
     );
   });
 });
