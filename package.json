@@ -35,7 +35,7 @@
   , "tape-spawn": "tomekwi/tape-spawn#fa94c25"
 
   , "doxie.filter": "0.3.2"
-  , "doxie.render": "0.1.0"
+  , "doxie.render": "0.1.1"
   , "doxie.output": "0.2.0"
   }
 
