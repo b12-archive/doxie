@@ -33,6 +33,7 @@
 
   , "1-liners": "1-liners/1-liners#7614ba6"
   , "tape-catch": "1.0.4"
+  , "nexpect": "tomekwi/nexpect#b616fa5"
   }
 
 , "bin":
