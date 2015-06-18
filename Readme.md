@@ -7,9 +7,9 @@
 ) [![David – status of dependencies
 ](https://img.shields.io/david/studio-b12/doxie.svg?style=flat-square
 )](https://david-dm.org/studio-b12/doxie
-) [![Stability: experimental
-](https://img.shields.io/badge/stability-experimental-yellow.svg?style=flat-square
-)](https://nodejs.org/api/documentation.html#documentation_stability_index
+) [![Stability: unstable
+](https://img.shields.io/badge/stability-unstable-yellowgreen.svg?style=flat-square
+)](https://github.com/studio-b12/doxie/milestones/1.0
 ) [![Code style: airbnb
 ](https://img.shields.io/badge/code%20style-airbnb-blue.svg?style=flat-square
 )](https://github.com/airbnb/javascript
