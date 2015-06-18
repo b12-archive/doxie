@@ -45,7 +45,7 @@ tape(title('Prints usage'), (is) => {
   });
 });
 
-tape(title('Fails having received empty input'), (is) => {
+tape(title('`doxie --<plugin>` fails having received empty input'), (is) => {
   const process = spawn(is, `${doxie} --output`);
   process.timeout(500);
 
@@ -63,7 +63,7 @@ tape(title('Fails having received empty input'), (is) => {
   process.end();
 });
 
-tape(title('Fails having received invalid JSON'), (is) => {
+tape(title('`doxie --<plugin>` fails having received invalid JSON'), (is) => {
   const process = spawn(is, `${doxie} --output`);
   process.timeout(500);
 
