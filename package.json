@@ -33,6 +33,10 @@
 
   , "tape-catch": "1.0.4"
   , "nexpect": "tomekwi/nexpect#b616fa5"
+
+  , "doxie.filter": "0.3.2"
+  , "doxie.render": "0.1.0"
+  , "doxie.output": "0.2.0"
   }
 
 , "bin":
