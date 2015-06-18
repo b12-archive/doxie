@@ -1,7 +1,9 @@
-var bold = require('chalk').bold;
+/* jshint maxlen: 99999 */
 
-module.exports = [
-  bold('SYNOPSIS'),
-  '',
-  require('./usage').replace(/^/mg, '    '),
-].join('\n');
+const {bold} = require('chalk');
+
+module.exports =
+`${bold('SYNOPSIS')}
+
+${require('./usage').replace(/^/mg, '    ')}
+`;

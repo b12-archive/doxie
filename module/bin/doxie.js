@@ -1,15 +1,16 @@
 #! /usr/bin/env node
 
-var args = process.argv.slice(2);
+const {stdin, stdout, stderr, argv, exit} = process;
+const args = argv.slice(2);
 
 const leave = (message) => {
-  process.stdout.write(`${message}\n`);
-  process.exit(0);
+  stdout.write(`${message}\n`);
+  exit(0);
 };
 
 const flee = (message) => {
-  process.stderr.write(`${message}\n`);
-  process.exit(1);
+  stderr.write(`${message}\n`);
+  exit(1);
 };
 
 // Usage info
@@ -31,19 +32,19 @@ if (args[0] === '--help') leave(
 );
 
 // Imports
-var doxie = require('doxie-core');
-var toJson = require('stream-to-json');
-var implode = require('1-liners/implode');
+const doxie = require('doxie-core');
+const toJson = require('stream-to-json');
+const implode = require('1-liners/implode');
 
-var prefix = require('chalk').cyan('[doxie]') + ' ';
-var tinyError = require('tiny-error')({prefix});
+const prefix = require('chalk').cyan('[doxie]') + ' ';
+const tinyError = require('tiny-error')({prefix});
 
 // Argument parsing
-var pluginName = /^--(.+)$/;
+const pluginName = /^--(.+)$/;
 
-var plugins = args.reduce(function(plugins, argument, index) {
-  var parsedPluginName = pluginName.exec(argument);
-  var indexOfLastPlugin = plugins.length;
+const plugins = args.reduce((plugins, argument, index) => {
+  const parsedPluginName = pluginName.exec(argument);
+  const indexOfLastPlugin = plugins.length;
 
   if (parsedPluginName) return plugins.concat({
     maker: require('doxie.' + parsedPluginName[1] + '/cli-plugin'),
@@ -56,25 +57,19 @@ var plugins = args.reduce(function(plugins, argument, index) {
     return plugins;
   }
 
-  throw tinyError('Unrecognized argument: ' +
-    '“' + argument + '” ' +
-    '(position ' + (index + 1) + ').'
+  throw tinyError(
+    `Unrecognized argument: “${argument}” (position ${index + 1}).`
   );
 }, []);
 
 // The logic
-toJson(process.stdin, function (error, data) {
+toJson(stdin, function (error, data) {
   if (error) flee(
     `${prefix}Invalid JSON input: “${error.message}”.\n`
   );
 
   doxie(
-    plugins.map(function(plugin) {
-      return implode(plugin.maker)(plugin.args);
-    }),
-    {
-      stdout: process.stdout,
-      stderr: process.stderr,
-    }
+    plugins.map(({maker, args}) => implode(maker)(args)),
+    {stdout, stderr}
   )(data);
 });
