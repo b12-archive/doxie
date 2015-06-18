@@ -13,8 +13,8 @@
 ) [![Code style: airbnb
 ](https://img.shields.io/badge/code%20style-airbnb-blue.svg?style=flat-square
 )](https://github.com/airbnb/javascript
-)[![Join the chat at https://gitter.im/studio-b12/doxie
-] (https://img.shields.io/badge/GITTER-JOIN%20CHAT%20%E2%86%92-1dce73.svg?style=flat-square
+) [![Join the chat at https://gitter.im/studio-b12/doxie
+](https://img.shields.io/badge/GITTER-JOIN%20CHAT%20%E2%86%92-1dce73.svg?style=flat-square
 )](https://gitter.im/studio-b12/doxie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 )
 
