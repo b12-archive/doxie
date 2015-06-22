@@ -47,6 +47,22 @@ doxie
 
 
 
+**— Hey! We have *[jsDoc][]*, *[docco][]*, *[documentation][]* and [umpteen][] other doc generators. Do we really need another one?**
+
+— …
+
+**— OK, I get it. But if you want generic stuff, there’s [gulp][], and there was [grunt][]. Aren’t they de-facto tools for such things?**
+
+— …
+
+[jsDoc]:          http://usejsdoc.org/
+[docco]:          http://jashkenas.github.io/docco/
+[documentation]:  http://npm.im/documentation
+[umpteen]:        https://www.npmjs.com/browse/keyword/documentation
+
+
+
+
 Installation
 ------------
 
