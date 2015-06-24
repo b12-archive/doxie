@@ -33,7 +33,7 @@
 
   , "is-travis": "1.0.0"
   , "tape-catch": "1.0.4"
-  , "tape-spawn": "tomekwi/tape-spawn#fa94c25"
+  , "tape-spawn": "1.4.0"
 
   , "doxie.render": "0.1.1"
   , "doxie.output": "0.2.0"
