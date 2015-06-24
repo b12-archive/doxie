@@ -47,18 +47,25 @@ doxie
 
 
 
-**— Hey! We have *[jsDoc][]*, *[docco][]*, *[documentation][]* and [umpteen][] other doc generators. Do we really need another one?**
+**— But wait! We have [jsDoc][], [docco][], [documentation][] and [umpteen][] other doc generators. Do we really need another one?**
 
-— …
+— We’ve looked through all umpteen of them. We even heavily used one or the other. But what we’re after is flexibility. If you’re a perfectionist, construct your docs from the ground up, and polish them down to the very last detail to suit them to your liking. If you want decent results quickly, choose a ready-made theme. Probably you’re somewhere in between – so take a preset and tweak it a bit. We’re talking about total flexibility. This wasn’t possible before.
 
-**— OK, I get it. But if you want generic stuff, there’s [gulp][], and there was [grunt][]. Aren’t they de-facto tools for such things?**
+**— OK, I get it now. But if you want generic stuff, there’s [gulp][], and there was [grunt][]. Aren’t they de-facto tools for such things?**
 
-— …
+— Gulp is very flexible. But it’s designed to process individual files. Just like [metalsmith][] is designed to process trees of files. We need another abstraction. We have functions, objects, or CSS classes to document – and often we don’t even care what file they’re in. We call these things *docs*. Gulp works with files, and doxie works with *docs*.
+
+**— Well, now it becomes clear. Thanks for the interview.**
+
+— You’re very welcome.
 
 [jsDoc]:          http://usejsdoc.org/
 [docco]:          http://jashkenas.github.io/docco/
 [documentation]:  http://npm.im/documentation
 [umpteen]:        https://www.npmjs.com/browse/keyword/documentation
+[gulp]:           http://gulpjs.com/
+[grunt]:          http://gruntjs.com/
+[metalsmith]:     http://www.metalsmith.io/
 
 
 
