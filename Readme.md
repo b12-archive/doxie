@@ -53,7 +53,7 @@ doxie
 
 **— OK, I get it now. But if you want generic stuff, there’s [gulp][], and there was [grunt][]. Aren’t they de-facto tools for such things?**
 
-— Gulp is very flexible. But it’s designed to process individual files. Just like [metalsmith][] is designed to process trees of files. We need another abstraction. We have functions, objects, or CSS classes to document – and often we don’t even care what file they’re in. We call these things *docs*. Gulp works with files, and doxie works with *docs*.
+— Gulp is very flexible. But it’s designed to process individual files. Just like [metalsmith][] is designed to process whole directories. We need another abstraction. We have functions, objects, or CSS classes to document – and often we don’t even care what file they’re in. We call these things *docs*. Gulp works with files, and doxie works with *docs*.
 
 **— Well, now it becomes clear. Thanks for the interview.**
 
