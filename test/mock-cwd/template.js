@@ -4,9 +4,7 @@ module.exports = ({data: {title, parameters}}) => (
 ##  Parameters  ##
 
 ${parameters.map(({name, type, description}) => (
-`* \`{${type}} ${name}\` – ${description}
-`)).join('') ||
-`(none)
-`}
+  `* \`{${type}} ${name}\` – ${description}\n`
+)).join('') || `(none)\n`}
 
 `);
