@@ -70,6 +70,8 @@ doxie
 
 
 
+<p                                                                         ></p>
+
 Made with doxie
 ---------------
 
@@ -83,6 +85,8 @@ These readmes have been rendered with doxie:
 
 
 
+
+<p                                                                         ></p>
 
 Installation
 ------------
@@ -114,6 +118,8 @@ $ npm install --global dox
 
 
 
+
+<p                                                                         ></p>
 
 Usage
 -----
@@ -176,6 +182,8 @@ For an up-to-date list of available plugins visit <https://www.npmjs.com/browse/
 
 
 
+
+<p                                                                         ></p>
 
 License
 -------
