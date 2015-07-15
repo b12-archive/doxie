@@ -79,9 +79,11 @@ These readmes have been rendered with doxie:
 
 * [npm-scripts/scripts][]
 * [studio-b12/bare-select][]
+* [git-tips/tips][]
 
 [npm-scripts/scripts]:     https://github.com/npm-scripts/scripts
 [studio-b12/bare-select]:  https://github.com/studio-b12/bare-select
+[git-tips/tips]:           https://github.com/git-tips/tips
 
 
 
