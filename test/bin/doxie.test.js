@@ -53,7 +53,7 @@ if (require('is-travis')) console.log(
 
 else {
   tape(title('`doxie --<plugin>` fails having received empty input'), (is) => {
-    const process = spawn(is, `${doxie} --output`);
+    const process = spawn(is, `'${doxie}' --output`);
     process.timeout(500);
 
     process.exitCode(
@@ -71,7 +71,7 @@ else {
   });
 
   tape(title('`doxie --<plugin>` fails having received invalid JSON'), (is) => {
-    const process = spawn(is, `${doxie} --output`);
+    const process = spawn(is, `'${doxie}' --output`);
     process.timeout(500);
 
     process.exitCode(
@@ -92,7 +92,7 @@ else {
   tape(title(
     '`doxie --<plugin>` fails when it gets a non-array as input'
   ), (is) => {
-    const process = spawn(is, `${doxie} --output`);
+    const process = spawn(is, `'${doxie}' --output`);
     process.timeout(500);
 
     process.exitCode(
@@ -117,7 +117,7 @@ else {
 
     const process = spawn(is, [
       'doxie',
-      `--render ${resolve(__dirname, '../mock-cwd/template.js')} `,
+      `--render '${resolve(__dirname, '../mock-cwd/template.js')}' `,
       '--output',
     ].join(' '));
     process.timeout(500);
