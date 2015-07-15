@@ -70,7 +70,7 @@ doxie
 
 
 
-<p                                                                         ></p>
+<p                                                                   >&nbsp;</p>
 
 Made with doxie
 ---------------
@@ -86,7 +86,7 @@ These readmes have been rendered with doxie:
 
 
 
-<p                                                                         ></p>
+<p                                                                   >&nbsp;</p>
 
 Installation
 ------------
@@ -119,7 +119,7 @@ $ npm install --global dox
 
 
 
-<p                                                                         ></p>
+<p                                                                   >&nbsp;</p>
 
 Usage
 -----
@@ -183,7 +183,7 @@ For an up-to-date list of available plugins visit <https://www.npmjs.com/browse/
 
 
 
-<p                                                                         ></p>
+<p                                                                   >&nbsp;</p>
 
 License
 -------
