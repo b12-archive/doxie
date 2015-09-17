@@ -85,11 +85,11 @@ These readmes have been rendered with doxie:
 * [studio-b12/mve][]
 * [studio-b12/polydox][]
 
-[npm-scripts/scripts]:     https://github.com/npm-scripts/scripts
+[git-tips/tips]:           https://github.com/git-tips/tips
 [studio-b12/tape-css]:     https://github.com/studio-b12/tape-css
+[npm-scripts/scripts]:     https://github.com/npm-scripts/scripts
 [studio-b12/bare-select]:  https://github.com/studio-b12/bare-select
 [parametric-svg/patch]:    https://github.com/parametric-svg/patch
-[git-tips/tips]:           https://github.com/git-tips/tips
 [studio-b12/mve]:          https://github.com/studio-b12/mve
 [studio-b12/polydox]:      https://github.com/studio-b12/polydox
 
