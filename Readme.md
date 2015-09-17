@@ -77,11 +77,11 @@ Made with doxie
 
 These readmes have been rendered with doxie:
 
-* [npm-scripts/scripts][]
+* [git-tips/tips][]
 * [studio-b12/tape-css][]
+* [npm-scripts/scripts][]
 * [studio-b12/bare-select][]
 * [parametric-svg/patch][]
-* [git-tips/tips][]
 * [studio-b12/mve][]
 * [studio-b12/polydox][]
 
