@@ -1,3 +1,4 @@
+<p                                                                   id="/"></p>
 [![Coveralls – test coverage
 ](https://img.shields.io/coveralls/studio-b12/doxie.svg?style=flat-square
 )](https://coveralls.io/r/studio-b12/doxie
@@ -70,7 +71,7 @@ doxie
 
 
 
-<p                                                                   >&nbsp;</p>
+<p                                               id="/made-with-doxie"><br/></p>
 
 Made with doxie
 ---------------
@@ -96,7 +97,7 @@ These readmes have been rendered with doxie:
 
 
 
-<p                                                                   >&nbsp;</p>
+<p                                                  id="/installation"><br/></p>
 
 Installation
 ------------
@@ -129,7 +130,7 @@ $ npm install --global dox
 
 
 
-<p                                                                   >&nbsp;</p>
+<p                                                         id="/usage"><br/></p>
 
 Usage
 -----
@@ -193,7 +194,7 @@ For an up-to-date list of available plugins visit <https://www.npmjs.com/browse/
 
 
 
-<p                                                                   >&nbsp;</p>
+<p                                                       id="/license"><br/></p>
 
 License
 -------
