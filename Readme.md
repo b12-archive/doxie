@@ -22,29 +22,23 @@
 
 
 
-doxie
-=====
-
-**The simplest doc generator you’ve seen.**
-
-
-
-
-<p align="center"><a
-  title="Graphic by the great Justin Mezzell"
-  href="http://justinmezzell.tumblr.com/post/89652317743"
-  >
-  <br/>
-  <br/>
+<h1                                                              align="center">
   <img
-    src="Readme/Compass.gif"
-    width="400"
-    height="300"
+    alt="git.io/doxie"
+    width="404"
+    height="472"
+    src="https://cdn.rawgit.com/studio-b12/doxie/0f9546e/doxie.svg"
   />
-  <br/>
-  <br/>
-</a></p>
+</h1>
 
+
+<p                                                                    ><br/></p>
+
+<h4                                                      align="center"><strong>
+  The simplest doc generator you’ve seen.
+</strong></h4>
+
+<p                                                                    ><br/></p>
 
 
 
