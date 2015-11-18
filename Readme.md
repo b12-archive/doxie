@@ -31,13 +31,11 @@
   />
 </h1>
 
-
-<p                                                                    ><br/></p>
-
 <h4                                                      align="center"><strong>
   The simplest doc generator you’ve seen.
 </strong></h4>
 
+<p                                                                    ><br/></p>
 <p                                                                    ><br/></p>
 
 
