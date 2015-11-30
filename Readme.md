@@ -32,7 +32,7 @@
 </h1>
 
 <h4                                                      align="center"><strong>
-  The simplest doc generator you’ve seen.
+  The most flexible doc generator you’ve seen
 </strong></h4>
 
 <p                                                                    ><br/></p>
